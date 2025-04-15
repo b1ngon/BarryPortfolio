@@ -18,10 +18,12 @@
         <div class="header-left">
           <div class="logo">Barry Ngon</div>
           <nav class="nav-links">
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
+            <a href="#" onclick="showSection('home-section'); return false;">Home</a>
+            <a href="#" onclick="showSection('about-section'); return false;">About Me</a>
+            <a href="#" onclick="showSection('projects-section'); return false;">Projects</a>
+            <a href="#" onclick="showSection('contact-section'); return false;">Contact</a>
+          </nav>          
+          
         </div>
         <div class="header-right">
           <div class="top-icons">
@@ -35,28 +37,35 @@
           <a href="assets/Barry_Resume.pdf" class="resume-btn" target="_blank">Resume</a>
         </div>
       </header>
-      
-  <main class="container">
-    <div class="profile-img">
-      <img src="assets/Barry.png" alt="Barry Ngon Profile Photo" />
-    </div>
-    <div class="intro">
+
+    
+  <section id="home-section" class="home-section content-section">
+    <main class="container">
+        <div class="profile-img">
+            <img src="assets/Barry.png" alt="Barry Ngon Profile Photo" />
+        </div>
+        <div class="intro">
       <h1>My name is Barry Ngon.</h1>
       <p>
         I’m an aspiring Software Developer passionate about real-world impact.
       </p>
       <a href="mailto:barryngon0814@gmail.com" class="contact-btn">Contact Me</a>
     </div>
-  </main>
+    </main>
+  </section>
 
-  <section id="about" class="about-section">
+  <section id="about-section" class="about-section content-section">
+    <div class="container">
     <h2>About Me</h2>
     <p>
         Hi, I’m Barry Ngon — a highly driven Computer Science student at Arizona State University with a growing foundation in full-stack development, data structures, and core computing concepts. My journey into technology started with a fascination for how software influences everyday life, which has since evolved into a focused drive to create thoughtful, impactful solutions.
     </p>
+    </div>
   </section>
-  
-  <section id="projects" class="projects-section">
+
+  <section id="projects-section" class="projects-section content-section">
+    <div class="container">
+        <div>
     <h2>Projects</h2>
     <ul>
       <li>
@@ -65,8 +74,8 @@
         </a>
       </li>
       <li>
-        <a href="Patient Billing Software for a hospital (Coming Soon)" target="_blank">
-            Patient Billing Software for a hospital (Coming Soon)
+        <a href="Lockbase (Coming Soon)" target="_blank">
+          🔐 Encrypted Password Manager (Coming Soon)
         </a>
       </li>
       <li>
@@ -80,9 +89,13 @@
         </a>
       </li>
     </ul>
+    </div>
+</div>
   </section>
 
-  <section id="contact" class="contact-section">
+  <section id="contact-section" class="contact-section content-section">
+    <div class="container">
+        <div>
     <h2>Contact</h2>
     <ul>
       <li>
@@ -102,6 +115,31 @@
         <a href="https://asu.joinhandshake.com/profiles/hmzzsh">https://asu.joinhandshake.com/profiles/hmzzsh</a>
       </li>
     </ul>
+    </div>
+</div>
   </section>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      const links = document.querySelectorAll('.nav-links a');
+
+      sections.forEach(section => {
+        section.style.display = (section.id === sectionId) ? 'block' : 'none';
+      });
+    
+    links.forEach(link => {
+        if (link.getAttribute('onclick')?.includes(sectionId)) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+      });
+    }
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('home-section'); 
+    });
+  </script>
   
   
