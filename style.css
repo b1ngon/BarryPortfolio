@@ -359,7 +359,7 @@ html {
 #about-section > .container {
   display: block !important;
   padding: 00 !important;
-  margin-top: 15rem !important; /* small gap under the <h2> */
+  margin-top: 10rem !important; /* small gap under the <h2> */
 }
 
 #about-section h2 {
@@ -367,4 +367,8 @@ html {
 }
 #about-section p {
   margin-top: 0 !important;
+}
+
+body {
+  padding-top: 7rem;  /* adjust this value to match your header */
 }
