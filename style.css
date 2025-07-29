@@ -372,3 +372,48 @@ html {
 body {
   padding-top: 7rem;  /* adjust this value to match your header */
 }
+
+/* 1) Same section padding & background */
+#about-section,
+#projects-section,
+#contact-section {
+  padding: 4rem 3rem !important;
+  background-color: #333 !important;
+}
+
+/* 2) Opt each out of the flex centering */
+#about-section.content-section.active,
+#projects-section.content-section.active,
+#contact-section.content-section.active {
+  display: block !important;
+  height: auto !important;
+  min-height: auto !important;
+  justify-content: normal !important;
+  align-items: normal !important;
+}
+
+/* 3) Reset their inner .container so text hugs the <h2> */
+#about-section > .container,
+#projects-section > .container,
+#contact-section > .container {
+  display: block !important;
+  padding: 0 !important;
+  margin-top: 10rem !important;  /* small gap under the heading */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 4) Tighten each <h2> → paragraph gap */
+#about-section h2,
+#projects-section h2,
+#contact-section h2 {
+  margin-bottom: 1rem !important;
+}
+
+/* 5) Ensure paragraphs start immediately under the heading */
+#about-section p,
+#projects-section p,
+#contact-section p {
+  margin-top: 0 !important;
+}
