@@ -184,6 +184,21 @@ html {
   font-weight: bold;
 }
 
+.home-section .intro .quote {
+  font-size: 1.3rem;        
+  font-style: italic;
+  color: #bbb;              
+  margin: 2rem 0;           
+  padding-left: 1rem;       
+  border-left: 3px solid #555;
+}
+
+.home-section .intro .quote footer {
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-align: right;
+}
 /* About Section */
 .about-section {
   padding: 7rem 3rem 1rem;
@@ -200,6 +215,23 @@ html {
 .about-section p {
   font-size: 1.5rem;
   line-height: 1.6;
+}
+
+/* About‑section quote styling */
+.about-section .about-quote {
+  font-size: 1.25rem;      /* adjust for emphasis */
+  font-style: italic;
+  color: #bbb;             /* light grey to match theme */
+  margin: 2rem 0;          /* space above & below */
+  padding-left: 1rem;      /* indent block */
+  border-left: 3px solid #555;
+}
+
+.about-section .about-quote footer {
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-align: right;
 }
 
 /* Projects Section */
@@ -235,6 +267,23 @@ html {
 
 .projects-section a:hover {
   text-decoration: underline;
+}
+
+/* Projects‑section quote styling */
+.projects-section .projects-quote {
+  font-size: 1.3rem;        
+  font-style: italic;
+  color: #bbb;              
+  margin: 2rem 0;           
+  padding-left: 1rem;       
+  border-left: 3px solid #555;
+}
+
+.projects-section .projects-quote footer {
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-align: right;
 }
 
 /* Contact Section */
@@ -416,4 +465,31 @@ body {
 #projects-section p,
 #contact-section p {
   margin-top: 0 !important;
+}
+
+/* Make header wrap and keep icons + button in a row on medium screens */
+@media (max-width: 1024px) {
+  .top-bar {
+    flex-wrap: wrap;        /* allow items to wrap cleanly */
+    padding: 1.5rem 2rem;    /* tighten the padding a bit */
+  }
+
+  .header-left,
+  .header-right {
+    width: 100%;             /* full‑width rows */
+    justify-content: center; /* center each row’s content */
+    margin-bottom: 1rem;     /* spacing between rows */
+  }
+
+  /* keep only the middle nav links on their own row */
+  .nav-links {
+    order: 2;                /* force nav into middle */
+    margin: 0.5rem 0;
+  }
+  
+  .header-right {
+    order: 3;                /* icons + resume at bottom */
+    flex-direction: row;     /* keep them side‑by‑side */
+    gap: 2rem;               /* space out icons + button */
+  }
 }
