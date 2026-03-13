@@ -269,6 +269,50 @@ html {
   text-decoration: underline;
 }
 
+.info-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 0.75rem;
+  font-style: normal;
+  color: #aaa;
+  border: 1px solid #666;
+  border-radius: 50%;
+  cursor: help;
+  flex-shrink: 0;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.info-icon:hover {
+  color: #00bfff;
+  border-color: #00bfff;
+}
+
+.info-icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: #fff;
+  background: #1a1a1a;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.info-icon:hover::after {
+  opacity: 1;
+}
+
 .project-tag {
   display: inline-block;
   font-size: 0.75rem;
